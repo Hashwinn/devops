@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashwin Car Dealership</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            position: relative;
+            overflow: hidden;
+        }
+        .background-text {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10rem;
+            color: rgba(200, 200, 200, 0.1);
+            white-space: nowrap;
+            pointer-events: none;
+            user-select: none;
+            z-index: -1;
+        }
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            background: #34495e;
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+        }
+        .nav a:hover, .nav a:focus {
+            background: #16a085;
+        }
+        .main-content {
+            background: #fff;
+            padding: 20px;
+            margin: 20px 0; 
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .car-listings {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .car {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .car:hover, .car:focus {
+            background: #bdc3c7;
+        }
+        .car img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .car-logo {
+            max-width: 100px;
+            margin: 10px 0;
+        }
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        footer a {
+            color: #ecf0f1;
+            text-decoration: none;
+        }
+        footer a:hover, footer a:focus {
+            text-decoration: underline;
+        }
+        marquee {
+            background: #2c3e50;
+            color: #fff;
+            padding: 10px;
+            margin: 20px 0;
+        }
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+            }
+            .nav a {
+                padding: 10px;
+            }
+            .car {
+                min-width: 100%;
+            }
+        }
+    </style>
+    <script>
+        function showDetails(carModel) {
+            let details;
+            switch(carModel) {
+                case 'Tesla Model S':
+                    details = 'The Tesla Model S offers cutting-edge electric technology, an impressive range, and a luxurious interior with top-notch features. Price: $90,000';
+                    break;
+                case 'BMW 5 Series':
+                    details = 'The BMW 5 Series combines sporty performance with luxury. Enjoy a refined driving experience with advanced technology and premium comfort. Price: $60,000';
+                    break;
+                case 'BENZ E-Class':
+                    details = 'The BENZ E-Class delivers a balance of elegance, power, and innovation. It features a spacious interior, advanced safety systems, and a smooth ride. Price: $70,000';
+                    break;
+                default:
+                    details = 'Information not available.';
+            }
+            alert(details);
+        }
+    </script>
+</head>
+<body>
+    <div class="background-text">Hashwin</div>
+    <header>
+        <div class="container">
+            <h1>Welcome to Hashwin Car Dealership</h1>
+            <p>Your Trusted Car Dealership in Toronto</p>
+        </div>
+    </header>
+
+    <marquee>Exclusive Deals on Tesla, BMW, and BENZ! Visit Us Today!</marquee>
+
+    <nav class="nav" role="navigation">
+        <a href="#home">Home</a>
+        <a href="#cars">Our Cars</a>
+        <a href="#services">Services</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <section id="home" class="main-content" role="region" aria-labelledby="home-heading">
+            <h2 id="home-heading">Welcome to Hashwin Car Dealership</h2>
+            <p>At Hashwin, we offer a range of high-quality cars to suit every need and budget. Our team is dedicated to providing exceptional service and helping you find the perfect vehicle.</p>
+        </section>
+
+        <section id="cars" class="main-content" role="region" aria-labelledby="cars-heading">
+            <h2 id="cars-heading">Our Cars</h2>
+            <div class="car-listings">
+                <div class="car" tabindex="0" onclick="showDetails('Tesla Model S')" role="button" aria-pressed="false">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg" alt="Tesla Logo" class="car-logo">
+                    <h3>Tesla Model S</h3>
+                    <p><strong>Price:</strong> $90,000</p>
+                </div>
+                <div class="car" tabindex="0" onclick="showDetails('BMW 5 Series')" role="button" aria-pressed="false">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" alt="BMW Logo" class="car-logo">
+                    <h3>BMW 5 Series</h3>
+                    <p><strong>Price:</strong> $60,000</p>
+                </div>
+                <div class="car" tabindex="0" onclick="showDetails('BENZ E-Class')" role="button" aria-pressed="false">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Mercedes-Logo.svg" alt="BENZ Logo" class="car-logo">
+                    <h3>BENZ E-Class</h3>
+                    <p><strong>Price:</strong> $70,000</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="main-content" role="region" aria-labelledby="services-heading">
+            <h2 id="services-heading">Our Services</h2>
+            <ul>
+                <li>Vehicle Sales</li>
+                <li>Vehicle Financing</li>
+                <li>Maintenance and Repairs</li>
+                <li>Trade-ins</li>
+            </ul>
+        </section>
+
+        <section id="testimonials" class="main-content" role="region" aria-labelledby="testimonials-heading">
+            <h2 id="testimonials-heading">What Our Customers Say</h2>
+            <blockquote>
+                <p>"Great service and an excellent selection of cars. Highly recommend!"</p>
+                <footer>— Deepthi</footer>
+            </blockquote>
+            <blockquote>
+                <p>"Very satisfied with my purchase. The team at Hashwin was very helpful."</p>
+                <footer>— Nithin</footer>
+            </blockquote>
+        </section>
+
+        <section id="contact" class="main-content" role="region" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact Us</h2>
+            <p>For inquiries or to schedule a test drive, please reach out to us:</p>
+            <p>Email: <a href="mailto:info@hashwin.com">info@hashwin.com</a></p>
+            <p>Phone: (123) 456-7890</p>
+            <p>Address: Farmgreenway, Toronto</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Hashwin Car Dealership. All rights reserved.</p>
+    </footer>
+</body>
+</html>
